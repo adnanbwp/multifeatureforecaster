@@ -117,12 +117,24 @@ def create_histograms(results, number_of_simulations, days_to_simulate):
 
 def main():
     # Input parameters
+
+    # past daily throughput i.e. number of tasks / stories completed per day
     past_throughput = [1, 5, 0, 2, 3, 0, 1, 1, 0, 2, 1, 0,
                        0, 4, 1, 1, 0, 1, 0, 2, 1, 0, 2, 0, 1, 2, 1, 0, 0, 3]
+
+    # number of stories in each feature. Order of the list also sets feature priority
     feature_stories = [5, 8, 7, 6, 9, 12, 3, 8, 7, 9]
+
+    # number of features the team will work on in parallel
     simultaneous_features = 3
-    number_of_simulations = 50000
+
+    #  number of simulations to perform for the statistical analysis
+    number_of_simulations = 10000
+
+    # number of days to forecast, i.e. if we want to predict the number of completed features in the next 45 days, use 45 here.
     days_to_simulate = 45
+
+    #  the start date of the simulation. This is used to calculate the dates for each day in the simulation
     start_date = datetime(2024, 6, 21)
 
     # Run simulation
