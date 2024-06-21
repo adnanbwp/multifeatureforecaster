@@ -4,6 +4,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import math
+"""
+This python scripts generates and analyzes monte carlo simulation to forecast number of parallel features a team can complete based on past throughput.
+
+    Input Parameters:
+        - past_throughput: [int] - A list of integers representing the past throughput of the team.
+        - feature_stories: [int] - A list of integers representing the number of stories each feature will have. List order represents priority of features.
+        - simultaneous_features: int - An integer representing the maximum number of features that can be worked on simultaneously.
+        - number_of_simulations: int - An integer representing the number of simulations to run.
+        - days_to_simulate: int - An integer representing the number of days to simulate
+        - start_date:  datetime - A datetime object representing the start date of simulation
+
+    Output: 
+        - An analysis of features with number of days from the start date, the probability of completion within 'days_to_simulate'
+        - Histograms representing the analysis
+"""
 
 
 def run_simulation(past_throughput, feature_stories, simultaneous_features, number_of_simulations, days_to_simulate):
